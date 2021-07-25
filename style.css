@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Pirata One', cursive;
+    color: #fff;
+}
+
+nav {
+    background-color: #101522;
+    text-align: center;
+}
+
+nav #nav-header {
+    font-size: 2rem;
+    padding: 0rem .75rem;
+}
+
+main {
+  margin: auto;
+  padding: 1rem;
+  max-width: 600px;
+}
+
+textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-height: 20vh;
+  margin-top: 2rem;
+  font-size: large;
+  font-family: inherit;
+}
+
+button {
+    background-color: #101522;
+    border: none;
+    margin: 1rem 0rem;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: large;
+    color: #fff;
+}
+
+main #txt-output {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 10vh;
+  max-height: 20vh;
+  overflow: scroll;
+  border: 1px solid #333333;
+  padding: 1rem;
+  font-size: larger;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    background-color: #101522;
+    text-align: center;
+}
+
+footer .connect{
+  font-size: larger;
+}
+
+.social-media a{
+  padding-right: 5px;
+}
