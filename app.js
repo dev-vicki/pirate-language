@@ -1,4 +1,4 @@
-var translateButton = document.querySelector('#btn-translate');
+var translateButton = document.querySelector("#btn-translate");
 translateButton.addEventListener("click", buttonClickHandler)
 var translateInput = document.querySelector("#txt-input");
 var translateOutput = document.querySelector("#txt-output");
