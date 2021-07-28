@@ -1,24 +1,25 @@
-var translateButton = document.querySelector("#btn-translate");
-translateButton.addEventListener("click", buttonClickHandler)
-var translateInput = document.querySelector("#txt-input");
-var translateOutput = document.querySelector("#txt-output");
+let textInput = document.querySelector("#txt-input");
+let button = document.querySelector("#btn");
+let textOutput = document.querySelector("#txt-output");
 
-var url = "https://api.funtranslations.com/translate/pirate.json";
+let apiUrl = "https://api.funtranslations.com/translate/pirate.json";
 
-function buttonClickHandler(event) {
-    console.log("button clicked");
-    var input = translateInput.value;
-    var finalURL = constructURL(input);
-    console.log(finalURL);
-    fetch(finalURL)
-    .then(response => response.json())
-    .then(json => {
-        translateOutput.innerText = json.contents.translated;
-    })
-    .catch(() => alert("some error occured"))
+function fetchUrl(input) {
+  return apiUrl + "?text=" + input
 }
 
-function constructURL(inputText) {
-    var encodedURI = encodeURI(inputText);
-    return `${url}?text=${encodedURI}`;
+function errorHandler(error){
+  console.log("Error has occured ! : "+ error);
+  alert("Something went wrong with server! \n Please try after some time");
 }
+
+button.addEventListener("click", function clickEventHandler(){
+  let inputText = textInput.value
+  // fetching API
+  fetch(fetchUrl(inputText))
+  .then(Response => Response.json())
+  .then(json=>{
+    let finalOutput = json.contents.translated;
+    textOutput.innerText = finalOutput;
+  }) .catch(errorHandler)
+});
